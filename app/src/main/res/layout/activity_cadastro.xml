@@ -96,6 +96,7 @@
                 android:layout_width="165dp"
                 android:layout_height="41dp"
                 android:layout_gravity="center"
+                android:textAlignment="center"
                 android:background="#A6FFFFFF"
                 android:fontFamily="@font/montserratalternatesmedium"
                 android:hint="Matrícula"
