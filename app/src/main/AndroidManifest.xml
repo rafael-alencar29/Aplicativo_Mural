@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Introducao2"></activity>
+        <activity android:name=".CadastroEvento2"></activity>
+        <activity android:name=".CadastroEvento1" />
+        <activity android:name=".Introducao2" />
         <activity android:name=".Introducao">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

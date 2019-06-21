@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,12 +16,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         TextView registrar = (TextView)findViewById(R.id.registrar);
 
-        final Intent intent = new Intent(MainActivity.this, Cadastro.class);
+        final Intent cadastro = new Intent(MainActivity.this, Cadastro.class);
 
+        final Button entrar = (Button)findViewById(R.id.Entrar);
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.this.startActivity(intent);
+                MainActivity.this.startActivity(cadastro);
+            }
+        });
+        entrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
     }
