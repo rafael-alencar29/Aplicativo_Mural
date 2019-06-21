@@ -14,11 +14,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView registrar = (TextView)findViewById(R.id.registrar);
-
+        //Botoes e outros componentes
+        final TextView registrar = (TextView)findViewById(R.id.registrar);
         final Intent cadastro = new Intent(MainActivity.this, Cadastro.class);
-
+        final Intent cadastro2 = new Intent(MainActivity.this, CadastroEvento1.class);
         final Button entrar = (Button)findViewById(R.id.Entrar);
+        //Backend
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         entrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                MainActivity.this.startActivity(cadastro2);
             }
         });
     }
