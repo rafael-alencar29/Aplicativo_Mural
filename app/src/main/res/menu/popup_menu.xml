@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/Aluno"
+        android:title="Aluno"
+        ></item>
+    <item
+        android:id="@+id/Professor"
+        android:title="Professor"
+        ></item>
+    <item
+        android:id="@+id/Comunidade"
+        android:title="Comunidade"
+        ></item>
+
+</menu>
