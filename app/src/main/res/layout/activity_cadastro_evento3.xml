@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".CadastroEvento2"
+    tools:context=".CadastroEvento3"
     android:background="@drawable/intro">
     <RelativeLayout
         android:orientation="vertical"
@@ -50,52 +50,47 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserratsemibold"
-                        android:text="Crie um titulo e dê uma descrição à sua atividade"
+                        android:fontFamily="@font/montserratbold"
+                        android:text="Adicione uma imagem."
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
                         android:textSize="16dp" />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserratsemibold"
-                        android:text="Titulo"
-                        android:textAlignment="center"
-                        android:textColor="#FFFFFF"
-                        android:layout_marginTop="20dp"
-                        android:textSize="16dp" />
-                    <EditText
-                        android:id="@+id/Titulo_evento"
-                        android:layout_width="match_parent"
-                        android:layout_height="41dp"
-                        android:background="#FFFFFF"
-                        android:fontFamily="@font/montserratalternatesmedium"
-                        android:textSize="20dp" />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserratsemibold"
-                        android:text="Descrição"
-                        android:textAlignment="center"
-                        android:textColor="#FFFFFF"
-                        android:layout_marginTop="20dp"
-                        android:textSize="16dp"/>
-
-                    <EditText
-                        android:id="@+id/editText2"
+                    <ImageView
+                        android:id="@+id/Foto_evento"
                         android:layout_width="260dp"
                         android:layout_height="175dp"
-                        android:ems="10"
-                        android:background="#FFFFFF"
-                        android:gravity="start|top"
-                        android:inputType="textMultiLine" />
-
+                        android:layout_marginTop="30dp"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/Galeria"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserratbold"
+                            android:text="Galeria"
+                            android:textAlignment="center"
+                            android:textColor="#80FFFFFF"
+                            android:textSize="16dp" />
+                        <TextView
+                            android:id="@+id/Camera"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserratbold"
+                            android:layout_marginLeft="135dp"
+                            android:text="Camera"
+                            android:textAlignment="center"
+                            android:textColor="#80FFFFFF"
+                            android:textSize="16dp" />
+                    </LinearLayout>
                     <ImageView
-                        android:id="@+id/Tela_3_cadastro_evento"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:id="@+id/Tela_4_cadastro_evento"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
                         app:srcCompat="@drawable/arrowaltcirclerightsolid"
-                        android:layout_marginTop="10dp"/>
+                        android:layout_marginTop="60dp"/>
                 </LinearLayout>
 
             </androidx.appcompat.widget.Toolbar>
