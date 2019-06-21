@@ -12,5 +12,4 @@
         android:id="@+id/Comunidade"
         android:title="Comunidade"
         ></item>
-
 </menu>
