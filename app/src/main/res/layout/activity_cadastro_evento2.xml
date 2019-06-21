@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CadastroEvento2"
+    android:background="@drawable/intro">
+    <RelativeLayout
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cabecalho"
+            android:orientation="horizontal">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="#FFFFFFFF"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="4dp"
+                    app:srcCompat="@drawable/logo"/>
+            </androidx.appcompat.widget.Toolbar>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar2"
+                android:layout_width="300dp"
+                android:layout_height="420dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="160dp">
+                <LinearLayout
+                    android:layout_width="260dp"
+                    android:layout_height="420dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserratsemibold"
+                        android:text="Crie um titulo e dê uma descrição à sua atividade"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16dp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserratsemibold"
+                        android:text="Titulo"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginTop="20dp"
+                        android:textSize="16dp" />
+                    <EditText
+                        android:id="@+id/Titulo_evento"
+                        android:layout_width="match_parent"
+                        android:layout_height="41dp"
+                        android:background="#FFFFFF"
+                        android:fontFamily="@font/montserratalternatesmedium"
+                        android:textSize="20dp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserratsemibold"
+                        android:text="Descrição"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginTop="20dp"
+                        android:textSize="16dp" />
+                    <EditText
+                        android:id="@+id/Descricao_evento"
+                        android:layout_width="match_parent"
+                        android:layout_height="175dp"
+                        android:background="#FFFFFF"
+                        android:fontFamily="@font/montserratalternatesmedium"
+                        android:textSize="20dp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:srcCompat="@drawable/arrowaltcirclerightsolid"
+                        android:layout_marginTop="10dp"/>
+                </LinearLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_vertical"
+            android:layout_height="50dp"
+            android:id="@+id/rodape"
+            android:background="#FFFFFF"
+            android:padding="10dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                app:srcCompat="@drawable/atgrosso"
+                android:layout_weight="1"/>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:srcCompat="@drawable/pesfino"
+                android:layout_weight="1"/>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:srcCompat="@drawable/tifino"
+                android:layout_weight="1"/>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:srcCompat="@drawable/gpfino"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
