@@ -55,7 +55,6 @@ public class Cadastro extends AppCompatActivity {
                 }else if((usuario.getText().toString()).isEmpty()){
                     usuario.setHint("Digite seu e-mail");
                     usuario.setHintTextColor(Color.parseColor("#FF0000"));
-                    //Toast.makeText(Cadastro.this,"Digite e-mail", Toast.LENGTH_LONG).show();
                 }else if((senha.getText().toString()).isEmpty() || (senha.getText().toString().length()<6)){
                     senha.setHint("Digite uma senha");
                     senha.setHintTextColor(Color.parseColor("#FF0000"));
