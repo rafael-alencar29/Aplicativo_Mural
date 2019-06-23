@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/montserratsemibold"
+        android:fontFamily="@font/montserratalternatessemibold"
         android:text="Crie um titulo e dê uma descrição à sua atividade"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
@@ -16,7 +16,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/montserratsemibold"
+        android:fontFamily="@font/montserratalternatessemibold"
         android:text="Titulo"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
@@ -27,12 +27,12 @@
         android:layout_width="match_parent"
         android:layout_height="41dp"
         android:background="#FFFFFF"
-        android:fontFamily="@font/montserratalternatesmedium"
+        android:fontFamily="@font/montserratalternatessemibold"
         android:textSize="20dp" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/montserratsemibold"
+        android:fontFamily="@font/montserratalternatessemibold"
         android:text="Descrição"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
@@ -45,6 +45,7 @@
         android:layout_height="175dp"
         android:ems="10"
         android:background="#FFFFFF"
+        android:fontFamily="@font/montserratalternatessemibold"
         android:gravity="start|top"
         android:inputType="textMultiLine" />
 

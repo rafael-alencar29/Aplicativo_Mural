@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/montserratbold"
+        android:fontFamily="@font/montserratalternatessemibold"
         android:text="Sua atividade foi cadastrada com sucesso!"
         android:textAlignment="center"
         android:textColor="#FFFFFF"

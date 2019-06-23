@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -24,10 +25,11 @@ public class FragmentCadastroEvento3 extends Fragment {
     private ImageView fotoEvento;
     private FragmentCadastroEvento3Listener cadastroEvento3Listener = null;
     public  Uri image;
+    public Bitmap image2;
     private static final int GALLERY_REQUEST_CODE = 1;
 
     public interface FragmentCadastroEvento3Listener{
-        void onClickTela3(Uri image);
+        void onClickTela3(String tipo, Uri image,Bitmap image1);
     }
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -45,8 +47,10 @@ public class FragmentCadastroEvento3 extends Fragment {
             public void onClick(View view) {
                 if(fotoEvento.getDrawable() == null){
                     Toast.makeText(Objects.requireNonNull(getContext()),"Selecione uma imagem",Toast.LENGTH_LONG).show();
+                }else if(fotoEvento.getDrawable().equals(image)){
+                    cadastroEvento3Listener.onClickTela3("Uri",image,null);
                 }else{
-                    cadastroEvento3Listener.onClickTela3(image);
+                    cadastroEvento3Listener.onClickTela3("Uri",null,image2);
                 }
             }
         });
@@ -59,7 +63,7 @@ public class FragmentCadastroEvento3 extends Fragment {
         camera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                pickFromGallery();
+                pickFromGallery1();
             }
         });
         return v;
@@ -78,6 +82,12 @@ public class FragmentCadastroEvento3 extends Fragment {
         super.onDetach();
         cadastroEvento3Listener=null;
     }
+    private void pickFromGallery1(){
+        Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent,2);
+    }
+
+
     private void pickFromGallery(){
         //Create an Intent with action as ACTION_PICK
         Intent intent=new Intent(Intent.ACTION_PICK);
@@ -96,6 +106,11 @@ public class FragmentCadastroEvento3 extends Fragment {
                 //data.getData returns the content URI for the selected Image
                 image = data.getData();
                 fotoEvento.setImageURI(data.getData());
+                break;
+            case 2:
+                Bitmap image1 = (Bitmap) data.getExtras().get("data");
+                image2 = image1;
+                fotoEvento.setImageBitmap(image1);
                 break;
         }
 
