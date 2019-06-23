@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="260dp"
+    android:layout_height="420dp"
+    android:id="@+id/Layout_Fragment_Cadastro_3">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserratbold"
+        android:text="Adicione uma imagem."
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16dp" />
+    <ImageView
+        android:id="@+id/Foto_evento"
+        android:layout_width="260dp"
+        android:layout_height="175dp"
+        android:layout_marginTop="30dp"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/Galeria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserratbold"
+            android:text="Galeria"
+            android:textAlignment="center"
+            android:textColor="#80FFFFFF"
+            android:textSize="16dp" />
+        <TextView
+            android:id="@+id/Camera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserratbold"
+            android:layout_marginLeft="135dp"
+            android:text="Camera"
+            android:textAlignment="center"
+            android:textColor="#80FFFFFF"
+            android:textSize="16dp" />
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/Vai_para_fragment_4"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/arrowaltcirclerightsolid"
+        android:layout_marginTop="90dp"/>
+</LinearLayout>

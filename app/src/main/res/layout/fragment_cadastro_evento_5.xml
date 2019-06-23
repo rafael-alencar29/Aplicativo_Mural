@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="260dp"
+    android:layout_height="420dp"
+    android:id="@+id/Layout_Fragment_Cadastro_5">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserratbold"
+        android:text="Qual categoria?"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16dp" />
+    <ListView
+        android:id="@+id/Lista_categorias"
+        android:layout_width="260dp"
+        android:layout_height="280dp"
+        android:layout_marginTop="20dp"
+        android:fadingEdge="vertical"/>
+
+    <ImageView
+        android:id="@+id/Vai_para_fragment_6"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/arrowaltcirclerightsolid"/>
+
+</LinearLayout>

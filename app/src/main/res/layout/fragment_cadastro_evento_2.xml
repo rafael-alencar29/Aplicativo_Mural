@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="260dp"
+    android:layout_height="420dp"
+    android:id="@+id/Layout_Fragment_Cadastro_2">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserratsemibold"
+        android:text="Crie um titulo e dê uma descrição à sua atividade"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserratsemibold"
+        android:text="Titulo"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="20dp"
+        android:textSize="16dp" />
+    <EditText
+        android:id="@+id/Titulo_evento"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/montserratalternatesmedium"
+        android:textSize="20dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserratsemibold"
+        android:text="Descrição"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="20dp"
+        android:textSize="16dp"/>
+
+    <EditText
+        android:id="@+id/Descricao_evento"
+        android:layout_width="260dp"
+        android:layout_height="175dp"
+        android:ems="10"
+        android:background="#FFFFFF"
+        android:gravity="start|top"
+        android:inputType="textMultiLine" />
+
+    <ImageView
+        android:id="@+id/Vai_para_fragment_3"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/arrowaltcirclerightsolid"
+        android:layout_alignParentBottom="true"/>
+</LinearLayout>

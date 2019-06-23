@@ -48,7 +48,7 @@
                 android:textSize="20dp"/>
 
             <EditText
-                android:id="@+id/Usuario_login"
+                android:id="@+id/Usuario_login_cadastro"
                 style="@android:style/Widget.Holo.EditText"
                 android:layout_width="match_parent"
                 android:layout_height="41dp"
@@ -62,7 +62,7 @@
                 android:textColorHint="#FFFFFF"
                 android:textSize="20dp" />
             <EditText
-                android:id="@+id/Senha_login"
+                android:id="@+id/Senha_login_cadastro"
                 android:layout_width="match_parent"
                 android:layout_height="41dp"
                 android:hint="Senha"
@@ -103,7 +103,7 @@
                 android:textColorHint="#FFFFFF"
                 android:textSize="20dp" />
             <Button
-                android:id="@+id/Entrar"
+                android:id="@+id/registrar"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="133dp"
                 android:layout_height="36dp"
