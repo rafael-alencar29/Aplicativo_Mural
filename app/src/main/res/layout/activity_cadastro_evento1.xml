@@ -36,45 +36,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar2"
-                android:layout_width="280dp"
-                android:layout_height="205dp"
-                android:background="#FFFFFFFF"
-                android:layout_gravity="center"
-                android:layout_marginTop="250dp">
-                <LinearLayout
-                    android:layout_width="240dp"
-                    android:layout_height="175dp"
-                    android:orientation="vertical">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar2"
+            android:layout_width="300dp"
+            android:layout_height="420dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="160dp">
+            <FrameLayout
+                android:layout_width="260dp"
+                android:layout_height="420dp"
+                android:orientation="vertical"
+                android:id="@+id/LinearCadastroEvento">
+            </FrameLayout>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserratsemibold"
-                        android:text="Gostaria de adicionar uma atividade ao mural?"
-                        android:textAlignment="center"
-                        android:textColor="#3A4748"
-                        android:textSize="20dp" />
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal"
-                            android:layout_marginTop="30dp">
-                            <ImageView
-                                android:layout_width="80dp"
-                                android:layout_height="80dp"
-                                android:layout_marginRight="80dp"
-                                app:srcCompat="@drawable/timescirclesolid"/>
-                            <ImageView
-                                android:id="@+id/Tela_2_cadastro_evento"
-                                android:layout_width="80dp"
-                                android:layout_height="80dp"
-                                app:srcCompat="@drawable/checkcirclesolid"/>
-                        </LinearLayout>
-                </LinearLayout>
-
-            </androidx.appcompat.widget.Toolbar>
+        </androidx.appcompat.widget.Toolbar>
         </LinearLayout>
         <LinearLayout
             android:layout_width="fill_parent"

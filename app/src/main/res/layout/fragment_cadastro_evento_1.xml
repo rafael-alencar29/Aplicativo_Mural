@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="280dp"
+    android:layout_height="205dp"
+    android:layout_marginTop="90dp"
+    android:id="@+id/Layout_Fragment_Cadastro_1">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="280dp"
+        android:layout_height="205dp"
+        android:background="#FFFFFFFF"
+        android:layout_gravity="center">
+        <LinearLayout
+            android:layout_width="240dp"
+            android:layout_height="175dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserratsemibold"
+                android:text="Gostaria de adicionar uma atividade ao mural?"
+                android:textAlignment="center"
+                android:textColor="#3A4748"
+                android:textSize="20dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="30dp">
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginRight="80dp"
+                    app:srcCompat="@drawable/timescirclesolid"
+                    android:id="@+id/Anterior"/>
+                <ImageView
+                    android:id="@+id/Vai_para_fragment_2"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    app:srcCompat="@drawable/checkcirclesolid"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+</LinearLayout>
