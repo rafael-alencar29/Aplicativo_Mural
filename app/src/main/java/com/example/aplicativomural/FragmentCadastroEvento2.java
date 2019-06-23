@@ -37,9 +37,9 @@ public class FragmentCadastroEvento2 extends Fragment {
             @Override
             public void onClick(View view) {
                 if((titulo.getText().toString()).equals(null) || (titulo.getText().toString()).length() < 10){
-                    Toast.makeText(Objects.requireNonNull(getContext()),"Adicione um Tilulo maior",Toast.LENGTH_LONG).show();
+                    Toast.makeText(Objects.requireNonNull(getContext()),"Adicione um tilulo maior",Toast.LENGTH_LONG).show();
                 }else if((descricao.getText().toString()).equals(null) || (descricao.getText().toString()).length() < 10){
-                    Toast.makeText(Objects.requireNonNull(getContext()),"Adicione uma Descrição maior",Toast.LENGTH_LONG).show();
+                    Toast.makeText(Objects.requireNonNull(getContext()),"Adicione uma descrição maior",Toast.LENGTH_LONG).show();
                 }else {
                     cadastroEvento2Listener.onClickTela2(titulo.getText().toString(),descricao.getText().toString());
                 }
