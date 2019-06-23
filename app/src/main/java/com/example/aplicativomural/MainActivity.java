@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
                     senha.setHintTextColor(Color.parseColor("#FF0000"));
                 }
                 //Lidar com o autenticação de usuário aqui
+                MainActivity.this.startActivity(cadastro2);
             }
         });
     }

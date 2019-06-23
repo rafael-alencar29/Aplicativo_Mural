@@ -34,7 +34,7 @@ public class FragmentCadastroEvento4 extends Fragment {
         return v;
     }
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        Fragment childFragment = new MapaCadastroEvento();
+        Fragment childFragment = new FragmentMapaCadastroEvento();
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
         transaction.replace(R.id.Layout_mapa, childFragment).commit();
     }

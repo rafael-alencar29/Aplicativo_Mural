@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -23,9 +22,8 @@ import java.util.Objects;
 public class FragmentCadastroEvento5 extends Fragment {
     private ImageView proximaTela;
     private FragmentCadastroEvento5Listener cadastroEvento5Listener;
-    private ListAdapter adapter;
-    private com.example.aplicativomural.Categoria categoria;
-    private String categoriaSelecionada=null;
+    private String categoriaSelecionada;
+    private Object obj=null;
 
     public interface FragmentCadastroEvento5Listener{
         void onClickTela5(String categoria);
@@ -35,38 +33,38 @@ public class FragmentCadastroEvento5 extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         @SuppressLint("ResourceType") View v = inflater.inflate(R.layout.fragment_cadastro_evento_5, container,false);
         proximaTela = v.findViewById(R.id.Vai_para_fragment_6);
+        categoriaSelecionada = "";
         final ListView listaCategorias = v.findViewById(R.id.Lista_categorias);
 
-        List list = new ArrayList<com.example.aplicativomural.Categoria>();
-        final com.example.aplicativomural.Categoria categoria1= new com.example.aplicativomural.Categoria("Categoria");
+        final List list = new ArrayList<com.example.aplicativomural.Categoria>();
+        final com.example.aplicativomural.Categoria categoria1= new com.example.aplicativomural.Categoria("Dança");
+        final com.example.aplicativomural.Categoria categoria2= new com.example.aplicativomural.Categoria("Musica");
+        final com.example.aplicativomural.Categoria categoria3= new com.example.aplicativomural.Categoria("Teatro");
         list.add(categoria1);
-        list.add(categoria1);
-        list.add(categoria1);
-        list.add(categoria1);
-        list.add(categoria1);
-        list.add(categoria1);
-        list.add(categoria1);
-        list.add(categoria1);
-        list.add(categoria1);
-        list.add(categoria1);
-        list.add(categoria1);
-        list.add(categoria1);
-        list.add(categoria1);
-        list.add(categoria1);
-        list.add(categoria1);
-        list.add(categoria1);
-        list.add(categoria1);
-        list.add(categoria1);
-        list.add(categoria1);
-        list.add(categoria1);
-        list.add(categoria1);
-        list.add(categoria1);
-        list.add(categoria1);
-        list.add(categoria1);
-        list.add(categoria1);
-        list.add(categoria1);
-        list.add(categoria1);
-        list.add(categoria1);
+        list.add(categoria2);
+        list.add(categoria3);
+        list.add(categoria3);
+        list.add(categoria3);
+        list.add(categoria3);
+        list.add(categoria3);
+        list.add(categoria3);
+        list.add(categoria3);
+        list.add(categoria3);
+        list.add(categoria3);
+        list.add(categoria3);
+        list.add(categoria3);
+        list.add(categoria3);
+        list.add(categoria3);
+        list.add(categoria3);
+        list.add(categoria3);
+        list.add(categoria3);
+        list.add(categoria3);
+        list.add(categoria3);
+        list.add(categoria3);
+        list.add(categoria3);
+        list.add(categoria3);
+        list.add(categoria3);
+
 
         CategoriaListAdapter adapter = new CategoriaListAdapter(Objects.requireNonNull(getContext()),R.layout.adapter_lista_categoria, (ArrayList<com.example.aplicativomural.Categoria>) list);
         listaCategorias.setAdapter(adapter);
@@ -74,14 +72,20 @@ public class FragmentCadastroEvento5 extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 view.setSelected(true);
+                obj = adapterView.getAdapter().getItem(i);
+                com.example.aplicativomural.Categoria a = (com.example.aplicativomural.Categoria)obj;
+                categoriaSelecionada = a.getCategoria();
             }
         });
-
 
         proximaTela.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                cadastroEvento5Listener.onClickTela5("A");
+                if(categoriaSelecionada.isEmpty()){
+                    Toast.makeText(Objects.requireNonNull(getContext()),"Selecione uma categoria",Toast.LENGTH_LONG).show();
+                }else{
+                    cadastroEvento5Listener.onClickTela5(categoriaSelecionada);
+                }
             }
         });
         return v;
