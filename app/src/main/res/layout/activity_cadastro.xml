@@ -6,121 +6,273 @@
     tools:context=".Cadastro"
     android:background="@drawable/intro">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="95dp"
+        android:layout_height="43dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline24"
+        app:layout_constraintEnd_toStartOf="@+id/guideline26"
+        app:layout_constraintStart_toStartOf="@+id/guideline25"
+        app:layout_constraintTop_toTopOf="@+id/guideline10"
+        app:srcCompat="@drawable/logo_cinza" />
 
-        <ImageView
-            android:layout_width="95dp"
-            android:layout_height="43dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/logo_cinza"
-            android:layout_marginTop="100dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:text="Cadastro"
-            android:textSize="30dp"
-            android:textColor="#FFFFFF"
-            android:fontFamily="@font/montserratsemibold"
-            />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/montserratsemibold"
+        android:text="Cadastro"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline28"
+        app:layout_constraintEnd_toStartOf="@+id/guideline26"
+        app:layout_constraintStart_toStartOf="@+id/guideline25"
+        app:layout_constraintTop_toTopOf="@+id/guideline27" />
 
-            <EditText
-                android:id="@+id/Usuario_nome"
-                style="@android:style/Widget.Holo.EditText"
-                android:layout_width="match_parent"
-                android:layout_height="41dp"
-                android:layout_marginLeft="48dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginRight="48dp"
-                android:layout_marginBottom="45dp"
-                android:background="#A6FFFFFF"
-                android:fontFamily="@font/montserratalternatesmedium"
-                android:hint="Nome"
-                android:textColorHint="#FFFFFF"
-                android:textSize="20dp"/>
+    <EditText
+        android:id="@+id/Usuario_nome"
+        style="@android:style/Widget.Holo.EditText"
+        android:layout_width="270dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#A6FFFFFF"
+        android:fontFamily="@font/montserratalternatesmedium"
+        android:hint="Nome"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline30"
+        app:layout_constraintEnd_toStartOf="@+id/guideline26"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline29" />
 
-            <EditText
-                android:id="@+id/Usuario_login_cadastro"
-                style="@android:style/Widget.Holo.EditText"
-                android:layout_width="match_parent"
-                android:layout_height="41dp"
-                android:layout_marginLeft="48dp"
-                android:layout_marginRight="48dp"
-                android:layout_marginBottom="45dp"
-                android:background="#A6FFFFFF"
-                android:fontFamily="@font/montserratalternatesmedium"
-                android:hint="E-mail"
-                android:inputType="textEmailAddress"
-                android:textColorHint="#FFFFFF"
-                android:textSize="20dp" />
-            <EditText
-                android:id="@+id/Senha_login_cadastro"
-                android:layout_width="match_parent"
-                android:layout_height="41dp"
-                android:hint="Senha"
-                android:textSize="20dp"
-                android:fontFamily="@font/montserratalternatesmedium"
-                android:textColorHint="#FFFFFF"
-                android:layout_marginLeft="48dp"
-                android:layout_marginRight="48dp"
-                android:layout_marginBottom="45dp"
-                android:inputType="textPassword"
-                android:background="#A6FFFFFF"
-                />
-            <LinearLayout
-                android:layout_width="200dp"
-                android:layout_height="41dp"
-                android:layout_gravity="center"
-                android:orientation="horizontal"
-                android:layout_marginBottom="5dp">
-                <Button
-                    android:id="@+id/Escolher"
-                    style="@style/Widget.AppCompat.Button.Borderless"
-                    android:layout_width="200dp"
-                    android:layout_height="41dp"
-                    android:textSize="20dp"
-                    android:textAllCaps="false"
-                    android:fontFamily="@font/montserratalternatesmedium"
-                    android:textColor="#FFFFFF"
-                    android:drawableEnd="@drawable/baseline"
-                    />
-            </LinearLayout>
-            <EditText
-                android:id="@+id/Matricula"
-                style="@android:style/Widget.Holo.EditText"
-                android:layout_width="165dp"
-                android:layout_height="41dp"
-                android:layout_gravity="center"
-                android:textAlignment="center"
-                android:background="#A6FFFFFF"
-                android:fontFamily="@font/montserratalternatesmedium"
-                android:hint="Matrícula"
-                android:textColorHint="#FFFFFF"
-                android:textSize="20dp" />
-            <Button
-                android:id="@+id/registrar"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="133dp"
-                android:layout_height="36dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="48dp"
-                android:layout_marginRight="48dp"
-                android:layout_marginTop="50dp"
-                android:text="Cadastrar"
-                android:textSize="20dp"
-                android:textAllCaps="false"
-                android:fontFamily="@font/montserratalternatesextrabold"
-                android:textColor="#ACACAC"
-                android:background="#FFFFFF"
-                />
-        </LinearLayout>
-    </LinearLayout>
+    <EditText
+        android:id="@+id/Usuario_login_cadastro"
+        style="@android:style/Widget.Holo.EditText"
+        android:layout_width="270dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#A6FFFFFF"
+        android:fontFamily="@font/montserratalternatesmedium"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline32"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline31" />
+
+    <EditText
+        android:id="@+id/Senha_login_cadastro"
+        android:layout_width="270dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#A6FFFFFF"
+        android:fontFamily="@font/montserratalternatesmedium"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline34"
+        app:layout_constraintEnd_toStartOf="@+id/guideline26"
+        app:layout_constraintStart_toStartOf="@+id/guideline25"
+        app:layout_constraintTop_toTopOf="@+id/guideline33" />
+
+    <Button
+        android:id="@+id/Escolher"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="200dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:drawableEnd="@drawable/baseline"
+        android:fontFamily="@font/montserratalternatesmedium"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline36"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline25"
+        app:layout_constraintTop_toTopOf="@+id/guideline35" />
+
+    <EditText
+        android:id="@+id/Matricula"
+        style="@android:style/Widget.Holo.EditText"
+        android:layout_width="270dp"
+        android:layout_height="41dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#A6FFFFFF"
+        android:fontFamily="@font/montserratalternatesmedium"
+        android:hint="Matrícula"
+        android:textAlignment="center"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline38"
+        app:layout_constraintEnd_toStartOf="@+id/guideline26"
+        app:layout_constraintStart_toStartOf="@+id/guideline25"
+        app:layout_constraintTop_toTopOf="@+id/guideline37" />
+
+    <Button
+        android:id="@+id/registrar"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="133dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/montserratalternatesextrabold"
+        android:text="Cadastrar"
+        android:textAllCaps="false"
+        android:textColor="#ACACAC"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline40"
+        app:layout_constraintEnd_toStartOf="@+id/guideline26"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline39" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.098495215" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15595075" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.00243309" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9951338" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.21614227" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2735978" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.38987687" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.49658003" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5649795" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.623803" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6798906" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.73324215" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.77975374" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8071135" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline38"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.868673" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline39"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.90834475" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95212036" />
 </androidx.constraintlayout.widget.ConstraintLayout>
