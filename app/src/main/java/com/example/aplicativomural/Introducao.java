@@ -4,22 +4,27 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
+import android.os.Handler;
 
 public class Introducao extends AppCompatActivity {
+
+    private static int WELCOME_TIMEOUT = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_introducao);
-        final TextView fraseinial= (TextView)findViewById(R.id.Frase_inicial);
-        final Intent telainial = new Intent(Introducao.this,Introducao2.class);
-        fraseinial.setOnClickListener(new View.OnClickListener() {
+
+        new Handler().postDelayed(new Runnable() {
             @Override
-            public void onClick(View view) {
-               Introducao.this.startActivity(telainial);
+            public void run() {
+                Intent welcome = new Intent(Introducao.this,Introducao2.class);
+                startActivity(welcome);
+
+                overridePendingTransition(R.anim.fadein,R.anim.fadeout);
+                finish();
             }
-        });
+        },WELCOME_TIMEOUT);
+
     }
 }

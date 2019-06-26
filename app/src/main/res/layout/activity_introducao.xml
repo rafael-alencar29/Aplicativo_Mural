@@ -4,31 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Introducao"
-    android:background="@drawable/intro">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <ImageView
-            android:layout_width="184dp"
-            android:layout_height="84dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/logo_cinza"
-            android:layout_marginTop="155dp"/>
-        <TextView
-            android:id="@+id/Frase_inicial"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="97dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:textAlignment="center"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. A asperiores facilis fugit inventore maiores, maxime, nam officiis quasi rem sit voluptas voluptate. Culpa dolor dolorem dolores explicabo harum magnam magni nam nisi numquam. Accusantium ad aperiam assumenda commodi consequatur fugit in."
-            android:textSize="20dp"
-            android:textColor="#8CFFFFFF"
-            android:fontFamily="@font/montserratalternatesmedium"
-            />
-    </LinearLayout>
+    android:background="@drawable/intro"
+    tools:context=".Introducao">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="184dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="184dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/logo_cinza" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
