@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "425143413473",
+    "firebase_url": "https://muraluniversitario-48990.firebaseio.com",
+    "project_id": "muraluniversitario-48990",
+    "storage_bucket": "muraluniversitario-48990.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:425143413473:android:598ec8a760c19048",
+        "android_client_info": {
+          "package_name": "com.example.aplicativomural"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "425143413473-vglqk3nrqirhv704s9usgq4irem22mcq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aplicativomural",
+            "certificate_hash": "51e6b964547b83d83f271aa7b19b8e11aef3b20e"
+          }
+        },
+        {
+          "client_id": "425143413473-gadr943s29iuj7ra4q6vmdbnp7opjbhe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlOVV64ZrpiedR7jYcHCaKYVh4TWXLdsI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "425143413473-gadr943s29iuj7ra4q6vmdbnp7opjbhe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -37,8 +37,11 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     compileOnly 'com.google.android.wearable:wearable:2.4.0'
     api 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
+    implementation 'com.google.firebase:firebase-core:17.0.0'
 
 }
 repositories {
     maven { url 'https://jitpack.io' }
 }
+
+apply plugin: 'com.google.gms.google-services'
