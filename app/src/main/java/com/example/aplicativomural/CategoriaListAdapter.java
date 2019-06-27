@@ -20,7 +20,8 @@ public class CategoriaListAdapter extends ArrayAdapter<com.example.aplicativomur
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         String categoria = getItem(position).getCategoria();
-        com.example.aplicativomural.Categoria categoria1 = new com.example.aplicativomural.Categoria(categoria);
+        com.example.aplicativomural.Categoria categoria1 = new com.example.aplicativomural.Categoria();
+        categoria1.setNome(categoria);
         LayoutInflater inflater = LayoutInflater.from(Objects.requireNonNull(getContext()));
         convertView = inflater.inflate(mRe, parent,false);
 

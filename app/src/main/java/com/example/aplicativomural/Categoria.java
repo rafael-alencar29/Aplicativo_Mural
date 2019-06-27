@@ -1,16 +1,24 @@
 package com.example.aplicativomural;
 public class Categoria {
-    public String categoria;
+    public String nome;
+    public String descricao;
 
-    public Categoria(String categoria) {
-        this.categoria = categoria;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public String getCategoria() {
-        return categoria;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public Categoria() {
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 }
