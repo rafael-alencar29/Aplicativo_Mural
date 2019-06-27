@@ -16,6 +16,24 @@ public class Evento {
     private Integer telegram;
     private Boolean periodico;
 
+    public Evento() {
+    }
+
+    public Evento(String titulo, Date data, String local, String descricao, Integer horario, String idCategoria, Integer telefone, String email, Boolean reportado, Integer whatsapp, Integer telegram, Boolean periodico) {
+        this.titulo = titulo;
+        this.data = data;
+        this.local = local;
+        this.descricao = descricao;
+        this.horario = horario;
+        IdCategoria = idCategoria;
+        this.telefone = telefone;
+        this.email = email;
+        this.reportado = reportado;
+        this.whatsapp = whatsapp;
+        this.telegram = telegram;
+        this.periodico = periodico;
+    }
+
     public String getTitulo() {
         return titulo;
     }
