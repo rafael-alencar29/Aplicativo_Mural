@@ -6,6 +6,16 @@ public class Comentario {
     private String IdUsuario;
     private String IdEvento;
 
+    public Comentario() {
+    }
+
+    public Comentario(String descricao, Integer horario, String idUsuario, String idEvento) {
+        Descricao = descricao;
+        Horario = horario;
+        IdUsuario = idUsuario;
+        IdEvento = idEvento;
+    }
+
     public String getDescricao() {
         return Descricao;
     }
