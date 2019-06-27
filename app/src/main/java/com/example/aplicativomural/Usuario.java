@@ -8,6 +8,18 @@ public class Usuario {
     private Boolean Administrador;
     private Boolean Tipo;
 
+    public Usuario() {
+    }
+
+    public Usuario(String nome, String senha, String email, String matricula, Boolean administrador, Boolean tipo) {
+        Nome = nome;
+        Senha = senha;
+        Email = email;
+        Matricula = matricula;
+        Administrador = administrador;
+        Tipo = tipo;
+    }
+
     public String getNome() {
         return Nome;
     }
