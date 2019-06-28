@@ -22,7 +22,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:background="#FFFFFFFF"
+                android:background="#FFFFFF"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme">
                 <ImageView
@@ -40,6 +40,7 @@
             android:id="@+id/toolbar2"
             android:layout_width="300dp"
             android:layout_height="420dp"
+            android:background = "#E59954"
             android:layout_gravity="center"
             android:layout_marginTop="160dp">
             <FrameLayout

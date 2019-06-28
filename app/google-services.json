@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "425143413473-rqjiare8155aebdij92hbrvbk684fm0t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aplicativomural",
+            "certificate_hash": "2099ade2251ac5ba8723717bf009adefcd927bef"
+          }
+        },
+        {
           "client_id": "425143413473-vglqk3nrqirhv704s9usgq4irem22mcq.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
