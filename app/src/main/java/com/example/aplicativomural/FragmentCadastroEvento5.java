@@ -37,9 +37,12 @@ public class FragmentCadastroEvento5 extends Fragment {
         final ListView listaCategorias = v.findViewById(R.id.Lista_categorias);
 
         final List list = new ArrayList<com.example.aplicativomural.Categoria>();
-        final com.example.aplicativomural.Categoria categoria1= new com.example.aplicativomural.Categoria("Dança");
-        final com.example.aplicativomural.Categoria categoria2= new com.example.aplicativomural.Categoria("Musica");
-        final com.example.aplicativomural.Categoria categoria3= new com.example.aplicativomural.Categoria("Teatro");
+        final com.example.aplicativomural.Categoria categoria1= new com.example.aplicativomural.Categoria();
+        categoria1.setNome("Dança");
+        final com.example.aplicativomural.Categoria categoria2= new com.example.aplicativomural.Categoria();
+        categoria2.setNome("Musica");
+        final com.example.aplicativomural.Categoria categoria3= new com.example.aplicativomural.Categoria();
+        categoria3.setNome("Teatro");
         list.add(categoria1);
         list.add(categoria2);
         list.add(categoria3);
@@ -74,7 +77,7 @@ public class FragmentCadastroEvento5 extends Fragment {
                 view.setSelected(true);
                 obj = adapterView.getAdapter().getItem(i);
                 com.example.aplicativomural.Categoria a = (com.example.aplicativomural.Categoria)obj;
-                categoriaSelecionada = a.getCategoria();
+                categoriaSelecionada = a.getNome();
             }
         });
 
