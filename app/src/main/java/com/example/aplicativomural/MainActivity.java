@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         //Botoes e outros componentes
         final TextView registrar = (TextView)findViewById(R.id.registrar);
         final Intent cadastro = new Intent(MainActivity.this, Cadastro.class);
-        final Intent cadastro2 = new Intent(MainActivity.this, CadastroEvento1.class);
+        final Intent eventos = new Intent(MainActivity.this, IndexEvento.class);
         final EditText usuario = findViewById(R.id.Usuario_login);
         final EditText senha = findViewById(R.id.Senha_login);
 
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                     senha.setHintTextColor(Color.parseColor("#FF0000"));
                 }
                 //Lidar com o autenticação de usuário aqui
-                //MainActivity.this.startActivity(cadastro2);
+                MainActivity.this.startActivity(eventos);
             }
         });
     }

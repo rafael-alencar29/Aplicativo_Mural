@@ -35,6 +35,7 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name=".CadastroEvento1" />
+        <activity android:name=".IndexEvento" />
         <activity android:name=".Introducao2" />
         <activity android:name=".Introducao">
             <intent-filter>
@@ -50,6 +51,9 @@
             android:name=".Cadastro"
             android:label="@string/title_activity_cadastro" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".Evento1" />
+        <activity android:name=".Evento2" />
+        <activity android:name=".Evento3" />
 
     </application>
 
