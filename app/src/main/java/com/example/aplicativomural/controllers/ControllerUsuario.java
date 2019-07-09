@@ -3,6 +3,7 @@ package com.example.aplicativomural.controllers;
 import androidx.annotation.NonNull;
 
 import com.example.aplicativomural.models.Usuario;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -42,7 +43,7 @@ public class ControllerUsuario {
                     usuarios.add(usuario);
                 }
                 dataStatus.DataIsLoaded(usuarios, keys);
-                
+
             }
 
             @Override
@@ -50,5 +51,15 @@ public class ControllerUsuario {
 
             }
         })
+    }
+    public void addUsuarios(Usuario usuario, final DataStatus dataStatus){
+        String key = mReferenceUsuario.push().getKey();
+        mReferenceUsuario.child(key).setValue(usuario)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        dataStatus.DataIsInserted();
+                    }
+                });
     }
 }
