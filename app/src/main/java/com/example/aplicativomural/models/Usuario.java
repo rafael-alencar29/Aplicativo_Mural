@@ -1,4 +1,4 @@
-package com.example.aplicativomural;
+package com.example.aplicativomural.models;
 
 public class Usuario {
     private String Nome;

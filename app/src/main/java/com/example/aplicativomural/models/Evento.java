@@ -1,4 +1,4 @@
-package com.example.aplicativomural;
+package com.example.aplicativomural.models;
 
 import java.util.Date;
 

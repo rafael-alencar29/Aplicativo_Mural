@@ -1,11 +1,11 @@
-package com.example.aplicativomural;
+package com.example.aplicativomural.controlers;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class FirebaseDatabaseHelper {
+public class ControlerUsuario {
     private FirebaseDatabase mDatabase;
-    private DatabaseReference mReferenceBooks;
+    private DatabaseReference mReferenceUsuario;
     
 
 }

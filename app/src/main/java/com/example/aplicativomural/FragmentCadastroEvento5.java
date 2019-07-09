@@ -15,6 +15,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.aplicativomural.models.Categoria;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -36,12 +38,12 @@ public class FragmentCadastroEvento5 extends Fragment {
         categoriaSelecionada = "";
         final ListView listaCategorias = v.findViewById(R.id.Lista_categorias);
 
-        final List list = new ArrayList<com.example.aplicativomural.Categoria>();
-        final com.example.aplicativomural.Categoria categoria1= new com.example.aplicativomural.Categoria();
+        final List list = new ArrayList<Categoria>();
+        final Categoria categoria1= new Categoria();
         categoria1.setNome("Dança");
-        final com.example.aplicativomural.Categoria categoria2= new com.example.aplicativomural.Categoria();
+        final Categoria categoria2= new Categoria();
         categoria2.setNome("Musica");
-        final com.example.aplicativomural.Categoria categoria3= new com.example.aplicativomural.Categoria();
+        final Categoria categoria3= new Categoria();
         categoria3.setNome("Teatro");
         list.add(categoria1);
         list.add(categoria2);
@@ -69,14 +71,14 @@ public class FragmentCadastroEvento5 extends Fragment {
         list.add(categoria3);
 
 
-        CategoriaListAdapter adapter = new CategoriaListAdapter(Objects.requireNonNull(getContext()),R.layout.adapter_lista_categoria, (ArrayList<com.example.aplicativomural.Categoria>) list);
+        CategoriaListAdapter adapter = new CategoriaListAdapter(Objects.requireNonNull(getContext()),R.layout.adapter_lista_categoria, (ArrayList<Categoria>) list);
         listaCategorias.setAdapter(adapter);
         listaCategorias.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 view.setSelected(true);
                 obj = adapterView.getAdapter().getItem(i);
-                com.example.aplicativomural.Categoria a = (com.example.aplicativomural.Categoria)obj;
+                Categoria a = (Categoria)obj;
                 categoriaSelecionada = a.getNome();
             }
         });
