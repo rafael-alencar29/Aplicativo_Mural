@@ -50,9 +50,9 @@ public class ControllerUsuario {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        })
+        });
     }
-    public void addUsuarios(Usuario usuario, final DataStatus dataStatus){
+    public void addUsuario(Usuario usuario, final DataStatus dataStatus){
         String key = mReferenceUsuario.push().getKey();
         mReferenceUsuario.child(key).setValue(usuario)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -62,4 +62,14 @@ public class ControllerUsuario {
                     }
                 });
     }
+    public void updateUsuario(String key, Usuario usuario, final DataStatus dataStatus){
+        mReferenceUsuario.child(key).setValue(usuario)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        dataStatus.DataIsUpdated();
+                    }
+                });
+    }
+    
 }
