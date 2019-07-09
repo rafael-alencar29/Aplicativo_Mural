@@ -22,7 +22,7 @@ public class ControllerUsuario {
         void DataIsLoaded(List<Usuario> usuarios, List<String> keys);
         void DataIsInserted();
         void DataIsUpdated();
-        void DataIsDelted();
+        void DataIsDeleted();
 
     }
 
@@ -71,5 +71,13 @@ public class ControllerUsuario {
                     }
                 });
     }
-    
+    public void deleteUsuario(String key, final DataStatus dataStatus){
+        mReferenceUsuario.child(key).setValue(null)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        dataStatus.DataIsDeleted();
+                    }
+                });
+    }
 }
