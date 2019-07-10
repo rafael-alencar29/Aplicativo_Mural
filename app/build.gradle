@@ -41,6 +41,7 @@ dependencies {
     api 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
     implementation 'androidx.cardview:cardview:1.0.0'
 
+
 }
 repositories {
     maven { url 'https://jitpack.io' }

@@ -24,6 +24,7 @@ public class FragmentCadastroEvento5 extends Fragment {
     private FragmentCadastroEvento5Listener cadastroEvento5Listener;
     private String categoriaSelecionada;
     private Object obj=null;
+    private ControllerCategoria controller = new ControllerCategoria();
 
     public interface FragmentCadastroEvento5Listener{
         void onClickTela5(String categoria);
@@ -37,7 +38,31 @@ public class FragmentCadastroEvento5 extends Fragment {
         final ListView listaCategorias = v.findViewById(R.id.Lista_categorias);
 
         final List list = new ArrayList<com.example.aplicativomural.Categoria>();
-        final com.example.aplicativomural.Categoria categoria1= new com.example.aplicativomural.Categoria("Dança");
+        controller.readCategorias(new ControllerCategoria.DataStatus() {
+            @Override
+            public void DataIsLoaded(List<Categoria> categorias, List<String> keys) {
+                for(Categoria categoria:categorias){
+                    list.add(categoria.getNome());
+                }
+            }
+
+            @Override
+            public void DataIsInserted() {
+
+            }
+
+            @Override
+            public void DataIsUpdated() {
+
+            }
+
+            @Override
+            public void DataIsDeleted() {
+
+            }
+        });
+
+        /*final com.example.aplicativomural.Categoria categoria1= new com.example.aplicativomural.Categoria("Dança");
         final com.example.aplicativomural.Categoria categoria2= new com.example.aplicativomural.Categoria("Musica");
         final com.example.aplicativomural.Categoria categoria3= new com.example.aplicativomural.Categoria("Teatro");
         list.add(categoria1);
@@ -63,7 +88,7 @@ public class FragmentCadastroEvento5 extends Fragment {
         list.add(categoria3);
         list.add(categoria3);
         list.add(categoria3);
-        list.add(categoria3);
+        list.add(categoria3);*/
 
 
         CategoriaListAdapter adapter = new CategoriaListAdapter(Objects.requireNonNull(getContext()),R.layout.adapter_lista_categoria, (ArrayList<com.example.aplicativomural.Categoria>) list);
