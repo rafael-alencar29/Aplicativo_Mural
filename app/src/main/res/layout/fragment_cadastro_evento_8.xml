@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="260dp"
+    android:layout_height="420dp"
+    android:id="@+id/Layout_Fragment_Cadastro_8">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserratalternatessemibold"
+        android:text="Qual horário?"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:textSize="20dp" />
+    <LinearLayout
+        android:layout_width="260dp"
+        android:layout_height="300dp"
+        android:orientation="vertical">
+        <TimePicker
+            android:id="@+id/pega_horas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#E59954"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:timePickerMode="spinner">
+        </TimePicker>
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/Volta_para_tela_anterior"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/arrowaltcirclerightsolid"/>
+
+</LinearLayout>

@@ -34,17 +34,18 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar2"
             android:layout_width="300dp"
             android:layout_height="420dp"
-            android:background = "#E59954"
+            android:background="@drawable/rounded_border"
+            android:backgroundTint="#E59954"
             android:layout_gravity="center"
             android:layout_marginTop="160dp">
             <FrameLayout
-                android:layout_width="260dp"
+                android:layout_width="267dp"
                 android:layout_height="420dp"
                 android:orientation="vertical"
                 android:id="@+id/LinearCadastroEvento">

@@ -17,6 +17,7 @@
         android:id="@+id/Foto_evento"
         android:layout_width="260dp"
         android:layout_height="175dp"
+        android:background="@drawable/rounded_border2"
         android:layout_marginTop="30dp"/>
     <LinearLayout
         android:layout_width="wrap_content"

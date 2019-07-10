@@ -12,10 +12,12 @@ import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 
-public class CadastroEvento1 extends AppCompatActivity implements  FragmentCadastroEvento1.FragmentCadastroEventoListener, FragmentCadastroEvento2.FragmentCadastroEvento2Listener,FragmentCadastroEvento3.FragmentCadastroEvento3Listener,FragmentCadastroEvento4.FragmentCadastroEvento4Listener,FragmentCadastroEvento5.FragmentCadastroEvento5Listener,FragmentCadastroEvento6.FragmentCadastroEvento6Listener{
+public class CadastroEvento1 extends AppCompatActivity implements  FragmentCadastroEvento1.FragmentCadastroEventoListener, FragmentCadastroEvento2.FragmentCadastroEvento2Listener,FragmentCadastroEvento3.FragmentCadastroEvento3Listener,FragmentCadastroEvento4.FragmentCadastroEvento4Listener,FragmentCadastroEvento5.FragmentCadastroEvento5Listener,FragmentCadastroEvento6.FragmentCadastroEvento6Listener,FragmentCadastroEvento7.FragmentCadastroEvento7Listener,FragmentCadastroEvento8.FragmentCadastroEvento8Listener,FragmentCadastroEvento9.FragmentCadastroEvento9Listener{
     private Fragment fragment;
-    private String tituloEvento,descricaoEvento, categoriaEvento;
+    private String tituloEvento,descricaoEvento, categoriaEvento,dataEvento,numeroTelefone;
+    private boolean temWhatsapp,temTelegram;
     private Uri imagemEvento;
+    private int horaEvento,minutoEvento;
     public Bitmap imagemEventoCamera;
     LocationManager locationManager;
 
@@ -71,9 +73,30 @@ public class CadastroEvento1 extends AppCompatActivity implements  FragmentCadas
     //Pega a categoria do evento e passa para tela de confirmação de criação
     public void onClickTela5(String categoria) {
         categoriaEvento = categoria;
-        fragment = new FragmentCadastroEvento6();
+        fragment = new FragmentCadastroEvento7();
         getSupportFragmentManager().beginTransaction().replace(R.id.LinearCadastroEvento,fragment).commit();
         //Fazer o push das informações para o FireBase aqui
+    }
+    @Override
+    public void onClickTela7(String date) {
+        dataEvento = date;
+        fragment = new FragmentCadastroEvento8();
+        getSupportFragmentManager().beginTransaction().replace(R.id.LinearCadastroEvento,fragment).commit();
+    }
+    @Override
+    public void onClickTela8(int Hora,int Minuto) {
+        horaEvento = Hora;
+        minutoEvento = Minuto;
+        fragment = new FragmentCadastroEvento9();
+        getSupportFragmentManager().beginTransaction().replace(R.id.LinearCadastroEvento,fragment).commit();
+    }
+    @Override
+    public void onClickTela9(String numerotelefone,boolean whats,boolean telegram) {
+        temTelegram = telegram;
+        temWhatsapp = whats;
+        numeroTelefone =numerotelefone;
+        fragment = new FragmentCadastroEvento6();
+        getSupportFragmentManager().beginTransaction().replace(R.id.LinearCadastroEvento,fragment).commit();
     }
     @Override
     //Confirma que o evento foi criado e volta para tela principal(Tela show evento)

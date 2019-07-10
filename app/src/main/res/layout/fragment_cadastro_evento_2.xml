@@ -26,7 +26,8 @@
         android:id="@+id/Titulo_evento"
         android:layout_width="match_parent"
         android:layout_height="41dp"
-        android:background="#FFFFFF"
+        android:background="@drawable/rounded_border2"
+        android:backgroundTint="#FFFFFF"
         android:fontFamily="@font/montserratalternatessemibold"
         android:textSize="20dp" />
     <TextView
@@ -44,7 +45,8 @@
         android:layout_width="260dp"
         android:layout_height="175dp"
         android:ems="10"
-        android:background="#FFFFFF"
+        android:background="@drawable/rounded_border2"
+        android:backgroundTint="#FFFFFF"
         android:fontFamily="@font/montserratalternatessemibold"
         android:gravity="start|top"
         android:inputType="textMultiLine" />
