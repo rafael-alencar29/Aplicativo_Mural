@@ -74,7 +74,7 @@ public class FragmentCadastroEvento5 extends Fragment {
                 view.setSelected(true);
                 obj = adapterView.getAdapter().getItem(i);
                 com.example.aplicativomural.Categoria a = (com.example.aplicativomural.Categoria)obj;
-                categoriaSelecionada = a.getCategoria();
+                categoriaSelecionada = a.getNome();
             }
         });
 
