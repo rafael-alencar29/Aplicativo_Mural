@@ -8,26 +8,30 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/montserratalternatessemibold"
-        android:text="Onde ocorrerá essa atividade?"
+        android:text="Digite o endereço do evento"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="16dp" />
-    <FrameLayout
+    <EditText
+        android:id="@+id/endereco_evento"
         android:layout_width="260dp"
-        android:layout_height="250dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_height="70dp"
+        android:ems="10"
         android:background="@drawable/rounded_border2"
-        android:id="@+id/Layout_mapa">
-
-    </FrameLayout>
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="@font/montserratalternatessemibold"
+        android:gravity="start|top"
+        android:inputType="textMultiLine" />
     <ImageView
         android:id="@+id/Vai_para_fragment_5"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_gravity="center"
         app:srcCompat="@drawable/arrowaltcirclerightsolid"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="180dp"
         android:layout_marginBottom="10dp"/>
 
 </LinearLayout>
