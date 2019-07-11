@@ -15,6 +15,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.aplicativomural.models.Categoria;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -25,6 +32,7 @@ public class FragmentCadastroEvento5 extends Fragment {
     private String categoriaSelecionada;
     private Object obj=null;
     private ControllerCategoria controller = new ControllerCategoria();
+    private DatabaseReference reff;
 
     public interface FragmentCadastroEvento5Listener{
         void onClickTela5(String categoria);
@@ -36,35 +44,27 @@ public class FragmentCadastroEvento5 extends Fragment {
         proximaTela = v.findViewById(R.id.Vai_para_fragment_6);
         categoriaSelecionada = "";
         final ListView listaCategorias = v.findViewById(R.id.Lista_categorias);
-
-        final List list = new ArrayList<com.example.aplicativomural.Categoria>();
-        controller.readCategorias(new ControllerCategoria.DataStatus() {
+        final List list = new ArrayList<Categoria>();
+        reff = FirebaseDatabase.getInstance().getReference().child("categorias");
+        reff.addValueEventListener(new ValueEventListener() {
             @Override
-            public void DataIsLoaded(List<Categoria> categorias, List<String> keys) {
-                for(Categoria categoria:categorias){
-                    list.add(categoria.getNome());
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    Categoria categoria = snapshot.getValue(Categoria.class);
+                    list.add(categoria);
                 }
             }
 
             @Override
-            public void DataIsInserted() {
-
-            }
-
-            @Override
-            public void DataIsUpdated() {
-
-            }
-
-            @Override
-            public void DataIsDeleted() {
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });
 
-        /*final com.example.aplicativomural.Categoria categoria1= new com.example.aplicativomural.Categoria("Dança");
-        final com.example.aplicativomural.Categoria categoria2= new com.example.aplicativomural.Categoria("Musica");
-        final com.example.aplicativomural.Categoria categoria3= new com.example.aplicativomural.Categoria("Teatro");
+        //System.out.println(list);
+        /*final com.example.aplicativomural.models.Categoria categoria1= new com.example.aplicativomural.models.Categoria("Dança");
+        final com.example.aplicativomural.models.Categoria categoria2= new com.example.aplicativomural.models.Categoria("Musica");
+        final com.example.aplicativomural.models.Categoria categoria3= new com.example.aplicativomural.models.Categoria("Teatro");
         list.add(categoria1);
         list.add(categoria2);
         list.add(categoria3);
@@ -91,14 +91,14 @@ public class FragmentCadastroEvento5 extends Fragment {
         list.add(categoria3);*/
 
 
-        CategoriaListAdapter adapter = new CategoriaListAdapter(Objects.requireNonNull(getContext()),R.layout.adapter_lista_categoria, (ArrayList<com.example.aplicativomural.Categoria>) list);
+        CategoriaListAdapter adapter = new CategoriaListAdapter(Objects.requireNonNull(getContext()),R.layout.adapter_lista_categoria, (ArrayList<Categoria>) list);
         listaCategorias.setAdapter(adapter);
         listaCategorias.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 view.setSelected(true);
                 obj = adapterView.getAdapter().getItem(i);
-                com.example.aplicativomural.Categoria a = (com.example.aplicativomural.Categoria)obj;
+                Categoria a = (Categoria)obj;
                 categoriaSelecionada = a.getNome();
             }
         });

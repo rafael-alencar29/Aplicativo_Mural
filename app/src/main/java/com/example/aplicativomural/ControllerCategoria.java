@@ -2,7 +2,7 @@ package com.example.aplicativomural;
 
 import androidx.annotation.NonNull;
 
-import com.example.aplicativomural.Categoria;
+import com.example.aplicativomural.models.Categoria;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

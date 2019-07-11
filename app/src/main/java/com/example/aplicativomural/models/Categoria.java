@@ -1,9 +1,9 @@
-package com.example.aplicativomural;
+package com.example.aplicativomural.models;
 public class Categoria {
     public String nome;
 
-    public Categoria(String nome) {
-        this.nome = nome;
+    public Categoria() {
+
     }
 
     public String getNome() {
