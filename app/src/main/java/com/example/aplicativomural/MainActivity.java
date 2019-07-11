@@ -28,6 +28,12 @@ public class MainActivity extends AppCompatActivity {
         final EditText senha = findViewById(R.id.Senha_login);
 
         final Button entrar = (Button)findViewById(R.id.Entrar);
+
+        // Retirar quando autenticacao for implementada
+        final TextView pular = (TextView)findViewById(R.id.pular);
+        final Intent index = new Intent(MainActivity.this, IndexEvento.class);
+
+
         //Backend
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,8 +51,16 @@ public class MainActivity extends AppCompatActivity {
                     senha.setHint("Digite sua senha");
                     senha.setHintTextColor(Color.parseColor("#FF0000"));
                 }
+
                 //Lidar com o autenticação de usuário aqui
                 //MainActivity.this.startActivity(cadastro2);
+            }
+        });
+
+        pular.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity.this.startActivity(index);
             }
         });
     }
