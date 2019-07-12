@@ -34,6 +34,8 @@ public class FragmentCadastroEvento5 extends Fragment {
     private ControllerCategoria controller = new ControllerCategoria();
     private DatabaseReference reff;
 
+
+
     public interface FragmentCadastroEvento5Listener{
         void onClickTela5(String categoria);
     }

@@ -7,7 +7,7 @@ import android.graphics.Bitmap;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
-
+import com.example.aplicativomural.models.Evento;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -25,9 +25,13 @@ public class CadastroEvento1 extends AppCompatActivity implements  FragmentCadas
     public Bitmap imagemEventoCamera;
     public GoogleMap mGoogleMap;
     LocationManager locationManager;
+    public Evento evento;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //Atribuição feita por motivo de teste
+        categoriaEvento = "sem categoria";
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_evento1);
         telaPrincipal= new Intent(CadastroEvento1.this, MainActivity.class);
@@ -72,7 +76,8 @@ public class CadastroEvento1 extends AppCompatActivity implements  FragmentCadas
     //Pega o endereço(ainda não terminado, não consegue retornar o endereço, apenas a latitude e longitude) e passa para tela de categoria do evento
     public void onClickTela4(String enderco) {
         enderecoEvento = enderco;
-        fragment = new FragmentCadastroEvento5();
+        //Mudança de evento5 para evento6 por motivo de teste
+        fragment = new FragmentCadastroEvento6();
         getSupportFragmentManager().beginTransaction().replace(R.id.LinearCadastroEvento,fragment).commit();
     }
 
@@ -105,8 +110,8 @@ public class CadastroEvento1 extends AppCompatActivity implements  FragmentCadas
         fragment = new FragmentCadastroEvento6();
         getSupportFragmentManager().beginTransaction().replace(R.id.LinearCadastroEvento,fragment).commit();
     }
+
     @Override
-    //Confirma que o evento foi criado e volta para tela principal(Tela show evento)
     public void onClickTela6() {
         CadastroEvento1.this.startActivity(telaPrincipal);
     }
@@ -114,6 +119,9 @@ public class CadastroEvento1 extends AppCompatActivity implements  FragmentCadas
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},1);
     }
     public void requestStoragePermissios() {
+        evento.writeEvento(tituloEvento,descricaoEvento, categoriaEvento,dataEvento,numeroTelefone,enderecoEvento,temWhatsapp,temTelegram,imagemEvento,horaEvento,minutoEvento);
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
     }
+
+
 }

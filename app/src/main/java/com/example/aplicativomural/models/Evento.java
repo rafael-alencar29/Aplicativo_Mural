@@ -1,132 +1,124 @@
 package com.example.aplicativomural.models;
 
-import java.util.Date;
+import android.net.Uri;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 
 public class Evento {
-    private String titulo;
-    private Date data;
-    private String local;
-    private String descricao;
-    private Integer horario;
-    private String IdCategoria;
-    private Integer telefone;
-    private String email;
-    private Boolean reportado;
-    private Integer whatsapp;
-    private Integer telegram;
-    private Boolean periodico;
+    private String tituloEvento,descricaoEvento, categoriaEvento,dataEvento,numeroTelefone,enderecoEvento;
+    private boolean temWhatsapp,temTelegram;
+    private Uri imagemEvento;
+    private int horaEvento,minutoEvento;
+    private DatabaseReference reff;
 
-    public Evento() {
+
+    public Evento(String tituloEvento, String descricaoEvento, String categoriaEvento, String dataEvento, String numeroTelefone, String enderecoEvento, boolean temWhatsapp, boolean temTelegram, Uri imagemEvento, int horaEvento, int minutoEvento) {
+        this.tituloEvento = tituloEvento;
+        this.descricaoEvento = descricaoEvento;
+        this.categoriaEvento = categoriaEvento;
+        this.dataEvento = dataEvento;
+        this.numeroTelefone = numeroTelefone;
+        this.enderecoEvento = enderecoEvento;
+        this.temWhatsapp = temWhatsapp;
+        this.temTelegram = temTelegram;
+        this.imagemEvento = imagemEvento;
+        this.horaEvento = horaEvento;
+        this.minutoEvento = minutoEvento;
     }
 
-    public Evento(String titulo, Date data, String local, String descricao, Integer horario, String idCategoria, Integer telefone, String email, Boolean reportado, Integer whatsapp, Integer telegram, Boolean periodico) {
-        this.titulo = titulo;
-        this.data = data;
-        this.local = local;
-        this.descricao = descricao;
-        this.horario = horario;
-        this.IdCategoria = idCategoria;
-        this.telefone = telefone;
-        this.email = email;
-        this.reportado = reportado;
-        this.whatsapp = whatsapp;
-        this.telegram = telegram;
-        this.periodico = periodico;
+    public void writeEvento(String tituloEvento, String descricaoEvento, String categoriaEvento, String dataEvento, String numeroTelefone, String enderecoEvento, boolean temWhatsapp, boolean temTelegram, Uri imagemEvento, int horaEvento, int minutoEvento){
+        Evento evento = new Evento(tituloEvento,descricaoEvento, categoriaEvento,dataEvento,numeroTelefone,enderecoEvento,temWhatsapp,temTelegram,imagemEvento,horaEvento,minutoEvento);
+        reff = FirebaseDatabase.getInstance().getReference();
+        reff.getDatabase().getReference().setValue(evento);
     }
 
-    public String getTitulo() {
-        return titulo;
+    public String getTituloEvento() {
+        return tituloEvento;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public void setTituloEvento(String tituloEvento) {
+        this.tituloEvento = tituloEvento;
     }
 
-    public Date getData() {
-        return data;
+    public String getDescricaoEvento() {
+        return descricaoEvento;
     }
 
-    public void setData(Date data) {
-        this.data = data;
+    public void setDescricaoEvento(String descricaoEvento) {
+        this.descricaoEvento = descricaoEvento;
     }
 
-    public String getLocal() {
-        return local;
+    public String getCategoriaEvento() {
+        return categoriaEvento;
     }
 
-    public void setLocal(String local) {
-        this.local = local;
+    public void setCategoriaEvento(String categoriaEvento) {
+        this.categoriaEvento = categoriaEvento;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getDataEvento() {
+        return dataEvento;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setDataEvento(String dataEvento) {
+        this.dataEvento = dataEvento;
     }
 
-    public Integer getHorario() {
-        return horario;
+    public String getNumeroTelefone() {
+        return numeroTelefone;
     }
 
-    public void setHorario(Integer horario) {
-        this.horario = horario;
+    public void setNumeroTelefone(String numeroTelefone) {
+        this.numeroTelefone = numeroTelefone;
     }
 
-    public String getIdCategoria() {
-        return IdCategoria;
+    public String getEnderecoEvento() {
+        return enderecoEvento;
     }
 
-    public void setIdCategoria(String idCategoria) {
-        IdCategoria = idCategoria;
+    public void setEnderecoEvento(String enderecoEvento) {
+        this.enderecoEvento = enderecoEvento;
     }
 
-    public Integer getTelefone() {
-        return telefone;
+    public boolean isTemWhatsapp() {
+        return temWhatsapp;
     }
 
-    public void setTelefone(Integer telefone) {
-        this.telefone = telefone;
+    public void setTemWhatsapp(boolean temWhatsapp) {
+        this.temWhatsapp = temWhatsapp;
     }
 
-    public String getEmail() {
-        return email;
+    public boolean isTemTelegram() {
+        return temTelegram;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setTemTelegram(boolean temTelegram) {
+        this.temTelegram = temTelegram;
     }
 
-    public Boolean getReportado() {
-        return reportado;
+    public Uri getImagemEvento() {
+        return imagemEvento;
     }
 
-    public void setReportado(Boolean reportado) {
-        this.reportado = reportado;
+    public void setImagemEvento(Uri imagemEvento) {
+        this.imagemEvento = imagemEvento;
     }
 
-    public Integer getWhatsapp() {
-        return whatsapp;
+    public int getHoraEvento() {
+        return horaEvento;
     }
 
-    public void setWhatsapp(Integer whatsapp) {
-        this.whatsapp = whatsapp;
+    public void setHoraEvento(int horaEvento) {
+        this.horaEvento = horaEvento;
     }
 
-    public Integer getTelegram() {
-        return telegram;
+    public int getMinutoEvento() {
+        return minutoEvento;
     }
 
-    public void setTelegram(Integer telegram) {
-        this.telegram = telegram;
-    }
-
-    public Boolean getPeriodico() {
-        return periodico;
-    }
-
-    public void setPeriodico(Boolean periodico) {
-        this.periodico = periodico;
+    public void setMinutoEvento(int minutoEvento) {
+        this.minutoEvento = minutoEvento;
     }
 }
