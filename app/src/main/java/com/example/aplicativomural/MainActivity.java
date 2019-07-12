@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         //Botoes e outros componentes
         final TextView registrar = (TextView)findViewById(R.id.registrar);
         final Intent cadastro = new Intent(MainActivity.this, Cadastro.class);
-        final Intent eventos = new Intent(MainActivity.this, IndexEvento.class);
+        final Intent eventos = new Intent(MainActivity.this, CadastroEvento1.class);
         final EditText usuario = findViewById(R.id.Usuario_login);
         final EditText senha = findViewById(R.id.Senha_login);
 

@@ -1,28 +1,36 @@
 package com.example.aplicativomural;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
-
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 
-public class CadastroEvento1 extends AppCompatActivity implements  FragmentCadastroEvento1.FragmentCadastroEventoListener, FragmentCadastroEvento2.FragmentCadastroEvento2Listener,FragmentCadastroEvento3.FragmentCadastroEvento3Listener,FragmentCadastroEvento4.FragmentCadastroEvento4Listener,FragmentCadastroEvento5.FragmentCadastroEvento5Listener,FragmentCadastroEvento6.FragmentCadastroEvento6Listener{
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+
+import com.google.android.gms.maps.GoogleMap;
+
+public class CadastroEvento1 extends AppCompatActivity implements  FragmentCadastroEvento1.FragmentCadastroEventoListener, FragmentCadastroEvento2.FragmentCadastroEvento2Listener,FragmentCadastroEvento3.FragmentCadastroEvento3Listener,FragmentCadastroEvento4.FragmentCadastroEvento4Listener,FragmentCadastroEvento5.FragmentCadastroEvento5Listener,FragmentCadastroEvento6.FragmentCadastroEvento6Listener,FragmentCadastroEvento7.FragmentCadastroEvento7Listener,FragmentCadastroEvento8.FragmentCadastroEvento8Listener,FragmentCadastroEvento9.FragmentCadastroEvento9Listener{
     private Fragment fragment;
-    private String tituloEvento,descricaoEvento, categoriaEvento;
+    private String tituloEvento,descricaoEvento, categoriaEvento,dataEvento,numeroTelefone,enderecoEvento;
+    private boolean temWhatsapp,temTelegram;
     private Uri imagemEvento;
+    private int horaEvento,minutoEvento;
+    private Intent telaPrincipal;
     public Bitmap imagemEventoCamera;
+    public GoogleMap mGoogleMap;
     LocationManager locationManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_evento1);
+        telaPrincipal= new Intent(CadastroEvento1.this, MainActivity.class);
 
         fragment = new FragmentCadastroEvento1();
         getSupportFragmentManager().beginTransaction().replace(R.id.LinearCadastroEvento,fragment).commit();
@@ -62,7 +70,8 @@ public class CadastroEvento1 extends AppCompatActivity implements  FragmentCadas
     }
     @Override
     //Pega o endereço(ainda não terminado, não consegue retornar o endereço, apenas a latitude e longitude) e passa para tela de categoria do evento
-    public void onClickTela4() {
+    public void onClickTela4(String enderco) {
+        enderecoEvento = enderco;
         fragment = new FragmentCadastroEvento5();
         getSupportFragmentManager().beginTransaction().replace(R.id.LinearCadastroEvento,fragment).commit();
     }
@@ -71,15 +80,35 @@ public class CadastroEvento1 extends AppCompatActivity implements  FragmentCadas
     //Pega a categoria do evento e passa para tela de confirmação de criação
     public void onClickTela5(String categoria) {
         categoriaEvento = categoria;
-        fragment = new FragmentCadastroEvento6();
+        fragment = new FragmentCadastroEvento7();
         getSupportFragmentManager().beginTransaction().replace(R.id.LinearCadastroEvento,fragment).commit();
         //Fazer o push das informações para o FireBase aqui
     }
     @Override
+    public void onClickTela7(String date) {
+        dataEvento = date;
+        fragment = new FragmentCadastroEvento8();
+        getSupportFragmentManager().beginTransaction().replace(R.id.LinearCadastroEvento,fragment).commit();
+    }
+    @Override
+    public void onClickTela8(int Hora,int Minuto) {
+        horaEvento = Hora;
+        minutoEvento = Minuto;
+        fragment = new FragmentCadastroEvento9();
+        getSupportFragmentManager().beginTransaction().replace(R.id.LinearCadastroEvento,fragment).commit();
+    }
+    @Override
+    public void onClickTela9(String numerotelefone,boolean whats,boolean telegram) {
+        temTelegram = telegram;
+        temWhatsapp = whats;
+        numeroTelefone =numerotelefone;
+        fragment = new FragmentCadastroEvento6();
+        getSupportFragmentManager().beginTransaction().replace(R.id.LinearCadastroEvento,fragment).commit();
+    }
+    @Override
     //Confirma que o evento foi criado e volta para tela principal(Tela show evento)
     public void onClickTela6() {
-        fragment = new FragmentCadastroEvento1();
-        getSupportFragmentManager().beginTransaction().replace(R.id.LinearCadastroEvento,fragment).commit();
+        CadastroEvento1.this.startActivity(telaPrincipal);
     }
     public void requestMapPermissions() {
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},1);

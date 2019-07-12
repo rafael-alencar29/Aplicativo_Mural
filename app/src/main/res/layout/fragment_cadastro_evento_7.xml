@@ -4,23 +4,31 @@
     android:orientation="vertical"
     android:layout_width="260dp"
     android:layout_height="420dp"
-    android:id="@+id/Layout_Fragment_Cadastro_6">
+    android:id="@+id/Layout_Fragment_Cadastro_7">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserratalternatessemibold"
-        android:text="Sua atividade foi cadastrada com sucesso!"
+        android:text="Em que dia?"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:layout_marginTop="50dp"
-        android:textSize="30dp" />
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:textSize="20dp" />
+    <CalendarView
+        android:id="@+id/calendario"
+        android:layout_width="267dp"
+        android:layout_height="300dp"
+        android:background="@drawable/rounded_border2"
+        android:backgroundTint="#E59954">
+
+    </CalendarView>
 
     <ImageView
         android:id="@+id/Volta_para_tela_anterior"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_gravity="center"
-        app:srcCompat="@drawable/checkcirclesolid"
-        android:layout_marginTop="60dp"/>
+        app:srcCompat="@drawable/arrowaltcirclerightsolid"/>
 
 </LinearLayout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="260dp"
+    android:layout_height="420dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserratalternatessemibold"
+        android:text="Adicione um contato para as pessoas interessadas no seu mural."
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:textSize="20dp" />
+    <EditText
+        android:id="@+id/telefone_evento"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/rounded_border2"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="@font/montserratalternatessemibold"
+        android:textSize="20dp"
+        android:digits="012345678"
+        android:inputType="phone"/>
+
+    <Switch
+        android:id="@+id/whats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/montserratalternatessemibold"
+        android:textSize="20dp"
+        android:text="Whatsapp"
+        android:theme="@style/SwitchCompatTheme"
+        android:layout_gravity="center"/>
+    <Switch
+        android:id="@+id/telegram"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/montserratalternatessemibold"
+        android:textSize="20dp"
+        android:text="Telegram  "
+        android:theme="@style/SwitchCompatTheme"
+        android:layout_gravity="center"/>
+
+    <ImageView
+        android:id="@+id/Volta_para_tela_anterior"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="80dp"
+        app:srcCompat="@drawable/arrowaltcirclerightsolid"/>
+
+</LinearLayout>
