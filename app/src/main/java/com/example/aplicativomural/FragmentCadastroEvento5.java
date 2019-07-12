@@ -49,9 +49,11 @@ public class FragmentCadastroEvento5 extends Fragment {
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Categoria categoria1 = new Categoria();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    Categoria categoria = snapshot.getValue(Categoria.class);
-                    list.add(categoria);
+                    
+                    categoria1.setNome(snapshot.getValue(Categoria.class).getNome());
+                    list.add(categoria1);
                 }
             }
 
