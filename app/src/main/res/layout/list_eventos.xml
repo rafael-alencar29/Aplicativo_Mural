@@ -7,10 +7,12 @@
     android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="300dp"
         android:layout_height="190dp"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="92dp" >
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="92dp">
 
         <ImageView
             android:id="@+id/imagemEv"
@@ -39,4 +41,16 @@
             android:text="TextView"
             android:textSize="15sp" />
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/HorarioEv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/robotomedium"
+        android:text="TextView"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

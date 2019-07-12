@@ -24,7 +24,7 @@ public class eventoAdapter extends RecyclerView.Adapter<eventoAdapter.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView nomeEvento, qtdInteressados;
+        TextView nomeEvento, qtdInteressados, horario;
         ImageView fotoEvento;
         OnItemListener onItemListener;
 
@@ -33,6 +33,7 @@ public class eventoAdapter extends RecyclerView.Adapter<eventoAdapter.ViewHolder
 
             nomeEvento = itemView.findViewById(R.id.NomeEv);
             qtdInteressados = itemView.findViewById(R.id.QtdPesEv);
+            horario = itemView.findViewById(R.id.HorarioEv);
             fotoEvento = itemView.findViewById(R.id.imagemEv);
             this.onItemListener = onItemListener;
 

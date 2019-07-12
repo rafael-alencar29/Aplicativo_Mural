@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/intro">
+    android:background="@drawable/intro"
+    tools:context=".IndexEvento">
 
     <LinearLayout
         android:id="@+id/cabecalho"
@@ -24,6 +25,7 @@
             android:theme="?attr/actionBarTheme">
 
             <ImageView
+                android:id="@+id/btnHome"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="4dp"
@@ -31,10 +33,11 @@
         </androidx.appcompat.widget.Toolbar>
     </LinearLayout>
 
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="50dp"
         app:layout_constraintBottom_toTopOf="@+id/rodape"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,18 +62,21 @@
             app:srcCompat="@drawable/atgrosso" />
 
         <ImageView
+            android:id="@+id/BtnPesquisa"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_weight="1"
             app:srcCompat="@drawable/pesfino" />
 
         <ImageView
+            android:id="@+id/btnFavoritos"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_weight="1"
             app:srcCompat="@drawable/tifino" />
 
         <ImageView
+            android:id="@+id/btnProximidade"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_weight="1"

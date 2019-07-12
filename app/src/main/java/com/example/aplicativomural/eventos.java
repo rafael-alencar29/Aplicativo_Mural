@@ -4,14 +4,15 @@ import android.widget.ImageView;
 
 public class eventos {
 
-    private String titulo, descricao, qtd_interessados;
+    private String titulo, descricao;
+    private int qtd_interessados;
     private ImageView cartaz;
 
-    public eventos(String titulo, String descricao, String qtd_interessados, ImageView cartaz) {
+    public eventos(String titulo, String descricao, int qtd_interessados) {
         this.titulo = titulo;
         this.descricao = descricao;
         this.qtd_interessados = qtd_interessados;
-        this.cartaz = cartaz;
+        //this.cartaz = cartaz;
     }
 
     public void setTitulo(String titulo) {
@@ -22,7 +23,7 @@ public class eventos {
         this.descricao = descricao;
     }
 
-    public void setQtd_interessados(String qtd_interessados) {
+    public void setQtd_interessados(int qtd_interessados) {
         this.qtd_interessados = qtd_interessados;
     }
 
@@ -38,7 +39,7 @@ public class eventos {
         return descricao;
     }
 
-    public String getInteressados() {
+    public int getInteressados() {
         return qtd_interessados;
     }
 
