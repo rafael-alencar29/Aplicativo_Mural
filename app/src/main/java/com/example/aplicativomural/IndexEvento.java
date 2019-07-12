@@ -1,55 +1,77 @@
 package com.example.aplicativomural;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
+import androidx.core.view.GestureDetectorCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-public class IndexEvento extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class IndexEvento extends AppCompatActivity implements eventoAdapter.OnItemListener {
+
+    RecyclerView recyclerView;
+    RecyclerView.Adapter myAdapter;
+    RecyclerView.LayoutManager layoutManager;
+    private GestureDetectorCompat gestureObject;
+
+    ImageView imageEvento;
+
+    ArrayList<eventos> evento;
+
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_index_evento);
+        setContentView(R.layout.activity_indexevento);
 
-        final CardView C_evento1 = findViewById(R.id.CardEvento1);
-        final CardView C_evento2 = findViewById(R.id.CardEvento2);
-        final CardView C_evento3 = findViewById(R.id.CardEvento3);
-        final ImageView btnCadastro = findViewById(R.id.btnMapa);
+        gestureObject = new GestureDetectorCompat(this, new LearnGesture());
 
-        final Intent evento1 = new Intent(IndexEvento.this, Evento1.class);
-        final Intent evento2 = new Intent(IndexEvento.this, Evento2.class);
-        final Intent evento3 = new Intent(IndexEvento.this, Evento3.class);
-        final Intent cadastro = new Intent(IndexEvento.this, CadastroEvento1.class);
+        recyclerView = findViewById(R.id.list);
+        recyclerView.setHasFixedSize(true);
 
-        C_evento1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                IndexEvento.this.startActivity(evento1);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+
+        evento = new ArrayList<eventos>();
+
+        myAdapter = new eventoAdapter(this, evento, this);
+        recyclerView.setAdapter(myAdapter);
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        evento.get(position);
+
+        if(position == 0) {
+            Intent intent = new Intent(this, Introducao.class); // Mudar dps
+            startActivity(intent);
+        } else {
+            Intent intent = new Intent(this, Cadastro.class);   // Mudar dps
+            startActivity(intent);
+        }
+    }
+
+    @Override
+    public boolean onTouchEvent (MotionEvent event) {
+        this.gestureObject.onTouchEvent(event);
+        return super.onTouchEvent(event);
+    }
+
+    class LearnGesture extends GestureDetector.SimpleOnGestureListener {
+        @Override
+        public boolean onFling(MotionEvent event1, MotionEvent event2, float velocityX, float velocityY) {
+            if(event2.getX() > event1.getX()) {
+                Intent intent = new Intent(IndexEvento.this, CadastroEvento1.class);
+                startActivity(intent);
             }
-        });
-
-        C_evento2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                IndexEvento.this.startActivity(evento2);
-            }
-        });
-
-        C_evento3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                IndexEvento.this.startActivity(evento3);
-            }
-        });
-
-        btnCadastro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                IndexEvento.this.startActivity(cadastro);
-            }
-        });
+            return true;
+        }
     }
 }
