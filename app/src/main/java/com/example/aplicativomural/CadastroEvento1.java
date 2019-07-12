@@ -87,6 +87,7 @@ public class CadastroEvento1 extends AppCompatActivity implements  FragmentCadas
         categoriaEvento = categoria;
         fragment = new FragmentCadastroEvento7();
         getSupportFragmentManager().beginTransaction().replace(R.id.LinearCadastroEvento,fragment).commit();
+        evento.writeEvento(tituloEvento,descricaoEvento, categoriaEvento,dataEvento,numeroTelefone,enderecoEvento,temWhatsapp,temTelegram,imagemEvento,horaEvento,minutoEvento,"2");
         //Fazer o push das informações para o FireBase aqui
     }
     @Override
@@ -119,7 +120,6 @@ public class CadastroEvento1 extends AppCompatActivity implements  FragmentCadas
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},1);
     }
     public void requestStoragePermissios() {
-        evento.writeEvento(tituloEvento,descricaoEvento, categoriaEvento,dataEvento,numeroTelefone,enderecoEvento,temWhatsapp,temTelegram,imagemEvento,horaEvento,minutoEvento);
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
     }
 

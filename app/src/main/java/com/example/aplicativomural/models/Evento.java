@@ -28,10 +28,11 @@ public class Evento {
         this.minutoEvento = minutoEvento;
     }
 
-    public void writeEvento(String tituloEvento, String descricaoEvento, String categoriaEvento, String dataEvento, String numeroTelefone, String enderecoEvento, boolean temWhatsapp, boolean temTelegram, Uri imagemEvento, int horaEvento, int minutoEvento){
+    public void writeEvento(String tituloEvento, String descricaoEvento, String categoriaEvento, String dataEvento, String numeroTelefone, String enderecoEvento, boolean temWhatsapp, boolean temTelegram, Uri imagemEvento, int horaEvento, int minutoEvento, String idEvento){
         Evento evento = new Evento(tituloEvento,descricaoEvento, categoriaEvento,dataEvento,numeroTelefone,enderecoEvento,temWhatsapp,temTelegram,imagemEvento,horaEvento,minutoEvento);
-        reff = FirebaseDatabase.getInstance().getReference();
-        reff.getDatabase().getReference().setValue(evento);
+        reff = FirebaseDatabase.getInstance().getReference("eventos");
+        String key = reff.push().getKey();
+        reff.child(key).setValue(evento);
     }
 
     public String getTituloEvento() {
